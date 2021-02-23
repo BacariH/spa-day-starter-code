@@ -5,11 +5,59 @@
     <title>Spa Menu</title>
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
-<body>
-<h1>My Super Fancy Spa</h1>
-<div id = "clientProfile">
-</div>
-<div id = "servicesMenu">
-</div>
-</body>
+    <body>
+        <h1>My Super Fancy Spa</h1>
+        <div id = "clientProfile">
+            <h2>My Profile</h2>
+            <p th:text="${name}">Default</p>
+            <p th:text="${skintype}">Default Skin Type</p>
+            <p th:text="${manipedi}">Default Manipedi</p>
+        </div>
+        <div id = "servicesMenu">
+            <h2>Menu of Avaliable Services</h2>
+            <table>
+                <thead>
+                    <tr></tr>
+                </thead>
+                <tbody>
+                    <tr th:each="facial : ${appropriateFacials}">
+                        <td th:text="${facial}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- The code below works just trying out a switch case so i can scale up-->
+            <hr>
+                <div th:switch="${manipedi}">
+                    <p th:case="'both'">
+                        <span th:replace="fragments :: manicureDescription"></span>
+                        <span th:replace="fragments :: pedicureDescription"></span>
+                    </p>
+                    <p th:case="'manicure'">
+                        <span th:replace="fragments :: manicureDescription"></span>
+                    </p>
+                    <p th:case="'pedicure'">
+                        <span th:replace="fragments :: pedicureDescription"></span>
+                    </p>
+                </div>
+    <hr>
+<!--            <div th:if="${manipedi == 'pedicure'}">-->
+<!--                <p th:replace="fragments :: pedicureDescription"></p>-->
+<!--            </div>-->
+
+<!--            <div th:if="${manipedi == 'manicure'}">-->
+<!--                <p th:replace="fragments :: manicureDescription"></p>-->
+<!--            </div>-->
+        </div>
+        <footer>
+            <h2>Our colors</h2>
+            <div class="color-container">
+                <div class="footer-divO"></div>
+                <div class="footer-divTw"></div>
+                <div class="footer-divTh"></div>
+                <div class="footer-divF"></div>
+            </div>
+
+        </footer>
+    </body>
 </html>

@@ -2,7 +2,7 @@ body {
     background-color: pink;
 }
 
-div {
+div, footer {
     margin: auto;
     width: 50%;
     padding: 10px;
@@ -20,7 +20,40 @@ h1 {
 
 table {
     margin: auto;
-            width: 50%;
-            padding: 10px;
-            text-align: center;
+    width: 50%;
+    padding: 10px;
+     text-align: center;
+}
+
+span{
+    margin-bottom: .60rem;
+}
+
+.color-container{
+    display: flex;
+    justify-items: space-evenly;
+}
+
+.footer-divO {
+    background-color: red;
+    height: 20px;
+    width: 20px;
+}
+
+.footer-divTw{
+    background-color: blue;
+    height: 20px;
+    width: 20px;
+}
+
+.footer-divTh{
+    background-color: green;
+    height: 20px;
+    width: 20px;
+}
+
+.footer-divF{
+    background-color: yellow;
+    height: 20px;
+    width: 20px;
 }
